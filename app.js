@@ -16,3 +16,24 @@ navToggle.addEventListener("click", function () {
     linkContainer.style.height = 0;
   }
 });
+
+const navBar = document.getElementById("nav");
+const topLink = document.querySelector(".top-link");
+
+window.addEventListener("scroll", function () {
+  const windowHeight = window.pageYOffset;
+  const navBarHeight = navBar.getBoundingClientRect().height;
+  console.log(windowHeight, navBarHeight);
+  if (windowHeight > navBarHeight) {
+    navBar.classList.add("fixed-nav");
+  } else {
+    navBar.classList.remove("fixed-nav");
+  }
+
+  if (windowHeight > 500) {
+    topLink.classList.add("show-link");
+  } else {
+    topLink.classList.remove("show-link");
+  }
+});
+//
